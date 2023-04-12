@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
 
     public float timer;
     public float timeBetweenSpawn;
-    public float speedMultiplier;
 
     void Start()
     {

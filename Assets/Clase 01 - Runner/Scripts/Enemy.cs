@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed;
+    public float timer;
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+        timer += Time.deltaTime;
+
+        transform.Translate(Vector3.back * Time.deltaTime * speed, Space.World);
+
+        if(timer > 5)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -8,18 +8,18 @@ public class player : MonoBehaviour
     void Update()
     {
      
-        if(transform.position.x == 0 || transform.position.x == -3f)
+        if(transform.position.x == 0 || transform.position.x == -2.5f)
         {
             if (Input.GetKeyDown(KeyCode.D))
             {
-                transform.Translate(0, 0, 3f);
+                transform.Translate(2.5f, 0, 0);
             }
         }
-        if (transform.position.x == 0 || transform.position.x == 3f)
+        if (transform.position.x == 0 || transform.position.x == 2.5f)
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                transform.Translate(0, 0, -3f);
+                transform.Translate(-2.5f, 0, 0);
             }
         }
     }
