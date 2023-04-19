@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8040392833576339758}
   - component: {fileID: 4601067066230105441}
   - component: {fileID: 5422395430704681241}
-  - component: {fileID: -7232083920682753812}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: enemy
@@ -64,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 64ca526055a67884fb55113e39078d71, type: 2}
+  - {fileID: 2100000, guid: 2f31f4440de60444b8dd94d4d64b3c00, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,16 +114,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-7232083920682753812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7215663226204310277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0409549ce44314c81fd693187f14a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 12

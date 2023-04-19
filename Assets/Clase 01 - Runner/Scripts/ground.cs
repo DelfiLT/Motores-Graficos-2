@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class ground : MonoBehaviour
 {
-    public int offsetZ = -44;
-
-
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        transform.position -= new Vector3(0, 0, 6 * Time.deltaTime);
-        if (transform.position.z <= offsetZ)
+        if(other.gameObject.CompareTag("Player"))
         {
-            transform.position = new Vector3(0, transform.position.y, 44);
+            Destroy(gameObject);
         }
     }
 }

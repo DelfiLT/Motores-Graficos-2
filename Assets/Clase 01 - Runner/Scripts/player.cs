@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
+    public float speed;
+    public float speedMultiplier;
+
     void Update()
     {
-     
-        if(transform.position.x == 0 || transform.position.x == -2.5f)
+        speedMultiplier += Time.deltaTime * 0.2f;
+
+        transform.Translate(Vector3.forward * Time.deltaTime * (speed + speedMultiplier), Space.World);
+
+        if (transform.position.x == 0 || transform.position.x == -2.5f)
         {
             if (Input.GetKeyDown(KeyCode.D))
             {
