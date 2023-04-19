@@ -1,4 +1,4 @@
-# Motores-Graficos-2
+# Motores Graficos 2 - 3D GAMES
 
 ## Class 01 - Endless Runner Mechanic
 
