@@ -20,8 +20,6 @@ public class shoot : MonoBehaviour
         float rotationY = Mathf.Atan2(distance.x, distance.y) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, rotationY, 0);
-
-        //transform.LookAt(new Vector3( mousePos.x, 0, mousePos.z));
     }
 
 }

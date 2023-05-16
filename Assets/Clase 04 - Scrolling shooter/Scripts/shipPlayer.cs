@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class shipPlayer : MonoBehaviour
 {
@@ -15,8 +17,7 @@ public class shipPlayer : MonoBehaviour
     public Vector3 camForce;
 
     public GameObject bullet;
-    public Transform rightBullet;
-    public Transform leftBullet;
+    public Transform bulletSpawn;
     public Transform playerBody;
 
 
@@ -54,16 +55,20 @@ public class shipPlayer : MonoBehaviour
 
     void fireBullet()
     {
-        GameObject bulletLeft = Instantiate(bullet, leftBullet.position, playerBody.rotation);
-        GameObject bulletRight = Instantiate(bullet, rightBullet.position, playerBody.rotation);
+        GameObject bulletClone = Instantiate(bullet, bulletSpawn.position, playerBody.rotation);
 
-        Rigidbody bulletRbLeft = bulletLeft.GetComponent<Rigidbody>();
-        Rigidbody bulletRbRight = bulletRight.GetComponent<Rigidbody>();
+        Rigidbody bulletRbLeft = bulletClone.GetComponent<Rigidbody>();
 
         bulletRbLeft.AddRelativeForce((Vector3.up * bulletForce) + camForce, ForceMode.Impulse);
-        bulletRbRight.AddRelativeForce((Vector3.up * bulletForce) + camForce, ForceMode.Impulse);
 
-        Destroy(bulletLeft, 4);
-        Destroy(bulletRight, 4);
+        Destroy(bulletClone, 4);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("enemyBullet"));
+        {
+            //SceneManager.LoadScene("Game");
+        }
     }
 }

@@ -5,27 +5,30 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public float speed;
-    private float distance;
+    public float camSpeed;
 
-    public Transform player;
-    public Transform[] spawnPositions;
-
-    public int spawnCount;
+    private Transform player;
 
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        distance = Vector3.Distance(transform.position, player.position);
+        transform.Translate(Vector3.forward * Time.deltaTime * camSpeed, Space.World);
+
         transform.LookAt(player.transform.position);
 
-        if (distance < 5)
+        transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("bullet"))
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            Destroy(this.gameObject);
         }
     }
 }

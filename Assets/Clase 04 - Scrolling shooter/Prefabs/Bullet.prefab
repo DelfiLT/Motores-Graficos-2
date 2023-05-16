@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8943108817848238623}
   - component: {fileID: 1014424182424173343}
   - component: {fileID: 5370511120930341596}
-  - component: {fileID: 1765294713594522531}
   - component: {fileID: -3568504175598557235}
+  - component: {fileID: 3481859948675550978}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8144083955597974405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24, y: -9.914, z: -15.049}
-  m_LocalScale: {x: 0.13371165, y: 0.13371165, z: 0.13371165}
+  m_LocalPosition: {x: -0.257, y: -9.459, z: -14.9152}
+  m_LocalScale: {x: 0.14193387, y: 0.1904455, z: 0.57163674}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c6642896a664208478a791474029accc, type: 2}
+  - {fileID: 2100000, guid: ff33c7fce672541f095331a057da80f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1765294713594522531
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8144083955597974405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-3568504175598557235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -109,8 +96,22 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!136 &3481859948675550978
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144083955597974405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7233977
+  m_Height: 1.5716013
+  m_Direction: 2
+  m_Center: {x: -0.50936705, y: 0.3517117, z: 0.0064055235}
