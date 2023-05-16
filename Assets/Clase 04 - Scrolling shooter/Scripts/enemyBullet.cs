@@ -22,7 +22,22 @@ public class enemyBullet : MonoBehaviour
 
     private void Update()
     {
-        if (timer > 10)
+        timer += Time.deltaTime;
+
+        if (timer > 5)
+        {
+            Destroy(gameObject);
+        }
+
+        if (transform.position.z >= 470f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

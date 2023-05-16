@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Clase 04 - Scrolling shooter/Menu.unity
+    guid: bab7ed5abeaff1a4e832827944db3939
+  - enabled: 1
+    path: Assets/Clase 04 - Scrolling shooter/Game.unity
+    guid: 2f49ce8ac3ee9124d9d291a0fd3d23f5
+  - enabled: 1
+    path: Assets/Clase 04 - Scrolling shooter/End.unity
+    guid: 400489db86a548c439c442e939b024f3
   m_configObjects: {}

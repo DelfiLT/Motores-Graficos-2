@@ -9,11 +9,8 @@ public class cameraMov : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.World);    
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("end"))
+        if(transform.position.z >= 470f)
         {
             speed = 0;
         }

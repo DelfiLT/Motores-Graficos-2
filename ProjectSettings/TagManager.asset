@@ -11,6 +11,8 @@ TagManager:
   - bullet
   - enemyBullet
   - end
+  - boss
+  - specialBullet
   layers:
   - Default
   - TransparentFX

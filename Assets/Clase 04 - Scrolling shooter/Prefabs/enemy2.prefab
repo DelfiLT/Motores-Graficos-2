@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4895143472649421518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 8, z: 15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1889396999738591616}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4895143472649421518}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 7684aa101ccc34e43b3a50a6a375c9b1, type: 3}
 --- !u!23 &37414304514630347
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f33c33d23a2dae4fa8c0f5a56d4f03b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0365058, y: 13.358775, z: 0.9952035}
-  m_Center: {x: -0.000010430813, y: -1.5243611, z: -0.003058195}
+  m_Size: {x: 1.0365058, y: 13.358775, z: 0.46878168}
+  m_Center: {x: -0.000010442734, y: -1.5243615, z: -0.013135338}
 --- !u!114 &-2192796813727360169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,10 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17371bd746ae96409dcb240ff4c7328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   camSpeed: 10
-  speed: 5
-  timeBetweenFire: 1
+  timeBetweenFire: 0.7
+  life: 50
   bullet: {fileID: 8144083955597974405, guid: d8862159ee50c17438be3838f02a4cec, type: 3}
+  particlePfab: {fileID: 5517674708852910553, guid: 606b05c47e53f1049af48f1d19f5a418, type: 3}
   bulletTransform: {fileID: 1889396999738591616}
   canFire: 0
 --- !u!1 &5297790319241016035
