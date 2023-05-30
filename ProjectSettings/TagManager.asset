@@ -13,6 +13,7 @@ TagManager:
   - end
   - boss
   - specialBullet
+  - medikit
   layers:
   - Default
   - TransparentFX
