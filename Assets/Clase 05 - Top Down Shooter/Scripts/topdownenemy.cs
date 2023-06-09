@@ -12,6 +12,7 @@ public class topdownenemy : MonoBehaviour
     private float distance;
     private float timer;
 
+    public float life;
     public float speed;
     public float bulletForce;
     public float timeToFire;
@@ -21,27 +22,22 @@ public class topdownenemy : MonoBehaviour
     void Start()
     {
         canFire = false;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("pBody").GetComponent<Transform>();
     }
 
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.position);
+        distance = Vector3.Distance(transform.position, player.position);
 
-        if (distance < 5)
+        if (distance < 7)
         {
+            transform.LookAt(player.transform.position);
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        }
 
-        if(distance < 10)
-        {
             if (canFire)
             {
-                Vector3 targetPostition = new Vector3(player.position.x, this.transform.position.y, player.position.z);
-                this.transform.LookAt(targetPostition);
                 canFire = false;
                 fireBullet();
-
             }
 
             if (!canFire)
@@ -54,8 +50,14 @@ public class topdownenemy : MonoBehaviour
                 }
             }
         }
+
+        if (life <= 0)
+        {
+            Destroy(this.gameObject);
+        }
         
     }
+
     void fireBullet()
     {
         GameObject bulletClone = Instantiate(bullet, bulletSpawn.position, this.transform.rotation);
@@ -65,5 +67,14 @@ public class topdownenemy : MonoBehaviour
         bulletRb.AddRelativeForce((Vector3.forward * bulletForce), ForceMode.Impulse);
 
         Destroy(bulletClone, 4);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            life = life - 10;
+            Destroy(other.gameObject);
+        }
     }
 }

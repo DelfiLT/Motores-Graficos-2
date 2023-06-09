@@ -13,7 +13,7 @@ public class door : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("pBody"))
         {
             doorAnim.SetBool("open", true);
         }
@@ -21,7 +21,7 @@ public class door : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("pBody"))
         {
             Invoke("closeDoor", 3f);
         }

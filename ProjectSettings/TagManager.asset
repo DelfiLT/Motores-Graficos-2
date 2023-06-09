@@ -16,6 +16,7 @@ TagManager:
   - medikit
   - Ground
   - key
+  - pBody
   layers:
   - Default
   - TransparentFX

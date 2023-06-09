@@ -20,14 +20,16 @@ public class player5 : MonoBehaviour
     public Transform bulletSpawn;
     public Transform playerBody;
     private Camera mainCam;
-    //public TextMeshProUGUI lifeText;
+    public TextMeshProUGUI lifeText;
 
     public bool canFire;
+    public bool hasKey;
 
     void Start()
     {
         mainCam = Camera.main;
         canFire = true;
+        hasKey = false;
     }
 
 
@@ -70,9 +72,9 @@ public class player5 : MonoBehaviour
             }
         }
 
-        //lifeText.text = "HP: " + life.ToString("00");
+        lifeText.text = "HP: " + life.ToString("00");
 
-        if (life == 0)
+        if (life <= 0)
         {
             SceneManager.LoadScene("End");
         }
@@ -87,14 +89,6 @@ public class player5 : MonoBehaviour
         bulletRbLeft.AddRelativeForce((Vector3.forward * bulletForce), ForceMode.Impulse);
 
         Destroy(bulletClone, 4);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("enemyBullet"))
-        {
-            life = life - 10;
-        }
     }
 
 }

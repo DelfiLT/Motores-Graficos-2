@@ -14,7 +14,7 @@ public class enemy : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("pBody").GetComponent<Transform>();
     }
 
     void Update()
@@ -52,7 +52,7 @@ public class enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("pBody"))
         {
             GameObject particleVFX = Instantiate(particlePfab, transform.position, Quaternion.identity);
             Destroy(particleVFX, 2f);
