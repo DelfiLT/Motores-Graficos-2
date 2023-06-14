@@ -24,3 +24,19 @@ Features:
 - Boss that throws missils to player
 - Explosion particles
 - Simple UI
+
+## Class 05 - Top Down Shooter
+
+Simple mechanic of a 3D top down shooter
+
+Features:
+
+- Player 8 direction movement and rotation
+- Shoot mechanic
+- Power up: pick object to heal
+- Shooter enemy that follows player
+- Map designed
+- Doors mechanic
+- Key needed to boss room
+- Pick object particles
+- Simple UI
